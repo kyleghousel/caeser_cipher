@@ -1,9 +1,11 @@
 def caeser_cipher(message, shift_factor)
     decipher = message.split('')
+    #Create empty array to append the new values into as the cipher is applied to each iterated character
     shifted_message = []
     deciphered = decipher.each { |char| 
         chord = char.ord
     
+        #Check if char is alphabetic. Could use a helper function here, but wanted the reps with the between? method
         if chord.between?(32, 64) || chord.between?(91, 96) || chord.between?(123, 126) || chord == 0
             new_char = char
             shifted_message.push(new_char.chr)
